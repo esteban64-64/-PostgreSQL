@@ -52,14 +52,18 @@ Ejemplo SQL:
     CREATE TABLE Cursos (
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(50)
-    );
-  
+    edad INT (edad >= 0)
+);
 
-     CREATE TABLE Inscripciones (
-      id SERIAL PRIMARY KEY,
-      estudiante_id INT REFERENCES Estudiantes(id),
-      curso_id INT REFERENCES Cursos(id)
-    );
+      CREATE TABLE Estudiantes (
+     estudiante_id SERIAL PRIMARY KEY,
+     nombre VARCHAR(50),
+     edad INT,
+     curso_id INT,
+     CONSTRAINT fk_curso
+    FOREIGN KEY (curso_id) REFERENCES Cursos(curso_id
+      );
+
 
 
 Buenas prácticas:
